@@ -8,9 +8,9 @@ const links = {
   gradesPreview: "https://docs.google.com/spreadsheets/d/REEMPLAZAR-CON-TU-SHEET/preview",
 };
 
-// Reemplaza esta URL por la dirección final del sitio publicado en GitHub Pages.
-// El QR se regenerará automáticamente al volver a compilar.
-const courseUrl = "https://REEMPLAZAR-CON-LA-URL-DEL-SITIO";
+// Dirección del sitio publicado en GitHub Pages.
+// El QR se regenera automáticamente al volver a compilar.
+const courseUrl = "https://camilocastro.github.io/curso-base-datos-20262g2/";
 
 const evaluation = [
   { name: "Parcial 1", note: "Se aplica al terminar el capítulo 6.", weight: 20 },
@@ -136,13 +136,6 @@ export default function Home() {
             <p>Escanea el código para ingresar a la página del curso.</p>
             <a href={courseUrl} target="_blank" rel="noreferrer">{courseUrl}</a>
           </aside>
-        </div>
-
-        <div className="info-grid">
-          <article><strong>14</strong><span>Capítulos</span><p>Del modelado conceptual a NoSQL.</p></article>
-          <article><strong>{totalSessions}</strong><span>Sesiones</span><p>Dos encuentros semanales de dos horas.</p></article>
-          <article><strong>2</strong><span>Parciales</span><p>Después de los capítulos 6 y 11.</p></article>
-          <article><strong>3</strong><span>Entregas</span><p>Proyecto aplicado en grupos de tres.</p></article>
         </div>
       </section>
 
