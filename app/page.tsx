@@ -3,9 +3,9 @@ import { SiteNav } from "@/components/site-nav";
 
 const links = {
   groupForm: "https://forms.gle/HdtA6kuNdZEffHRZ6",
-  gradesView: "https://docs.google.com/spreadsheets/d/REEMPLAZAR-CON-TU-SHEET/edit",
-  gradesDownload: "https://docs.google.com/spreadsheets/d/REEMPLAZAR-CON-TU-SHEET/export?format=xlsx",
-  gradesPreview: "https://docs.google.com/spreadsheets/d/REEMPLAZAR-CON-TU-SHEET/preview",
+  gradesView: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/edit?usp=sharing",
+  gradesDownload: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/export?format=xlsx",
+  gradesPreview: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/preview",
 };
 
 // Dirección del sitio publicado en GitHub Pages.
@@ -23,7 +23,7 @@ const evaluation = [
 
 const chapters: { n: number; sessions: number; topic: string; detail: string; slides?: string }[] = [
   { n: 1, sessions: 1, topic: "Introducción a las bases de datos", detail: "Conceptos básicos, importancia y evolución de las bases de datos · arquitectura cliente-servidor · integridad · roles: usuario final, DBA, programador y seguridad.", slides: "https://drive.google.com/file/d/1FRnLed6PEZHAEm-V_1KJbgNuo2FwPwvY/view?usp=sharing" },
-  { n: 2, sessions: 2, topic: "Requisitos y modelado conceptual", detail: "Fuentes de requisitos · entrevistas · reglas de negocio · identificación de entidades, atributos y relaciones iniciales." },
+  { n: 2, sessions: 2, topic: "Requisitos y modelado conceptual", detail: "Fuentes de requisitos · entrevistas · reglas de negocio · identificación de entidades, atributos y relaciones iniciales.", slides: "https://drive.google.com/file/d/10y554JstT39tRaxNcGvYOhrex1tfXBIP/view?usp=sharing" },
   { n: 3, sessions: 3, topic: "Diagrama entidad–relación I", detail: "Relaciones entre entidades · cardinalidades 1:1, 1:N y N:M · participación total y parcial." },
   { n: 4, sessions: 2, topic: "Diagrama entidad–relación II", detail: "Entidades débiles · generalización y especialización · jerarquías es-un · validación del diagrama ER." },
   { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
