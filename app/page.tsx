@@ -1,4 +1,4 @@
-import { BookOpen, CalendarDays, Clock, Download, ExternalLink, FileText, GraduationCap, Layers, Mail, PenLine, Presentation, Tag, Target, Users } from "lucide-react";
+import { BookOpen, CalendarDays, Clock, Download, ExternalLink, FileText, GraduationCap, Layers, Mail, PenLine, PencilRuler, Presentation, Tag, Target, Users } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 
 const links = {
@@ -21,10 +21,13 @@ const evaluation = [
   { name: "Quices y talleres de clase", note: "Actividades desarrolladas durante las sesiones.", weight: 10 },
 ];
 
-const chapters: { n: number; sessions: number; topic: string; detail: string; slides?: string }[] = [
+const chapters: { n: number; sessions: number; topic: string; detail: string; slides?: string; diagrams?: { label: string; url: string }[] }[] = [
   { n: 1, sessions: 1, topic: "Introducción a las bases de datos", detail: "Conceptos básicos, importancia y evolución de las bases de datos · arquitectura cliente-servidor · integridad · roles: usuario final, DBA, programador y seguridad.", slides: "https://drive.google.com/file/d/1FRnLed6PEZHAEm-V_1KJbgNuo2FwPwvY/view?usp=sharing" },
-  { n: 2, sessions: 2, topic: "Modelo Relacional I", detail: "De la realidad al modelo · requerimientos y comprensión del problema · entidades, atributos e identificadores · relaciones, cardinalidad 1:1, 1:N y N:M · opcionalidad (mínimo y máximo) · caso guiado y método de modelado.", slides: "https://drive.google.com/file/d/1E_EE6XokceAdvX2UAzobWwpa0CjANMFR/view?usp=sharing" },
-  { n: 3, sessions: 3, topic: "Modelo Relacional II", detail: "Entidades débiles · atributos compuestos, multivaluados y derivados · relaciones con atributos · relaciones recursivas y ternarias." },
+  { n: 2, sessions: 2, topic: "Modelo Relacional I", detail: "De la realidad al modelo · requerimientos y comprensión del problema · entidades, atributos e identificadores · relaciones, cardinalidad 1:1, 1:N y N:M · opcionalidad (mínimo y máximo) · caso guiado y método de modelado.", slides: "https://drive.google.com/file/d/1E_EE6XokceAdvX2UAzobWwpa0CjANMFR/view?usp=sharing", diagrams: [
+    { label: "Diagrama 1", url: "https://drive.google.com/file/d/1Z99L5Ivoxe_UbWYtHmLt7RdN39ji0B2d/view?usp=sharing" },
+    { label: "Diagrama 2", url: "https://drive.google.com/file/d/1GljrzGtxIAEUib92w3s74oq8jKkr9Ca8/view?usp=drive_link" },
+  ] },
+  { n: 3, sessions: 3, topic: "Modelo Relacional II", detail: "Entidades débiles · atributos compuestos, multivaluados y derivados · relaciones con atributos · relaciones recursivas y ternarias.", slides: "https://drive.google.com/file/d/1AqHsjJMeCVYeb6fnKXviHQk60Cxb6vOr/view?usp=sharing" },
   { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos." },
   { n: 5, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · BCNF · ejercicios integradores." },
   { n: 6, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
@@ -210,6 +213,13 @@ export default function Home() {
                       {c.slides
                         ? <a className="slides-link" href={c.slides} target="_blank" rel="noreferrer"><Presentation /> Ver presentación</a>
                         : <span className="unavailable">Por publicar</span>}
+                      {c.diagrams && (
+                        <div className="diagram-links">
+                          {c.diagrams.map((d) => (
+                            <a key={d.url} className="slides-link diagram-link" href={d.url} target="_blank" rel="noreferrer"><PencilRuler /> {d.label} <ExternalLink /></a>
+                          ))}
+                        </div>
+                      )}
                     </td>
                   </tr>,
                 ];

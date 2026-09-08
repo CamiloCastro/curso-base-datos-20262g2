@@ -503,6 +503,13 @@ td strong { color: var(--ink); }
 @media (prefers-color-scheme: dark) {
   .slides-link:hover { color: var(--navy-950); }
 }
+.diagram-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.diagram-link { background: transparent; }
 
 .unavailable {
   display: inline-block;
