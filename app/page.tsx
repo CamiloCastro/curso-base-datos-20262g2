@@ -6,6 +6,7 @@ const links = {
   gradesView: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/edit?usp=sharing",
   gradesDownload: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/export?format=xlsx",
   gradesPreview: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/preview",
+  delivery1Instructions: "https://drive.google.com/file/d/1Zxpkd0ZTqIiGJbOCcgtz5ctLJOsOeo_m/view?usp=sharing",
 };
 
 // Dirección del sitio publicado en GitHub Pages.
@@ -173,6 +174,7 @@ export default function Home() {
         <div className="section-title"><Users /><h2>Proyecto del curso</h2></div>
         <p>El proyecto se desarrolla en <strong>grupos de tres personas</strong> y permite aplicar progresivamente los temas estudiados. Cada entrega debe cumplir con los elementos listados a continuación.</p>
         <a className="button" href={links.groupForm} target="_blank" rel="noreferrer">Registrar mi grupo <ExternalLink /></a>
+        <a className="button secondary" href={links.delivery1Instructions} target="_blank" rel="noreferrer"><FileText /> Instrucciones — Entrega 1 <Download /></a>
         <h3>Entregas</h3>
         <div className="table-wrap">
           <table>
