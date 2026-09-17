@@ -17,7 +17,7 @@ const courseUrl = "https://camilocastro.github.io/curso-base-datos-20262g2/";
 const evaluation = [
   { name: "Parcial 1", note: "13 de octubre.", weight: 20 },
   { name: "Parcial 2", note: "Se aplica al terminar el capítulo 11.", weight: 20 },
-  { name: "Proyecto — Entrega 1", note: "Modelo ER, requisitos y normalización.", weight: 15 },
+  { name: "Proyecto — Entrega 1", note: "Modelo ER, esquema relacional y normalización.", weight: 15 },
   { name: "Proyecto — Entrega 2", note: "Implementación SQL e índices.", weight: 15 },
   { name: "Proyecto — Entrega 3 y sustentación", note: "Aplicación, documentación y presentación final.", weight: 20 },
   { name: "Quices y talleres de clase", note: "Actividades desarrolladas durante las sesiones.", weight: 10 },
@@ -35,8 +35,8 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
     { label: "Diagrama 5", url: "https://drive.google.com/file/d/1karavP8ieVcalV03NE5fb5u-KZKFek2q/view?usp=sharing" },
   ] },
   { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos.", slides: "https://drive.google.com/file/d/1Z2IY90agz9rDUPCqYwJvovzZ_N81tvr3/view?usp=drivesdk" },
-  { n: 5, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · BCNF · ejercicios integradores." },
-  { n: 6, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
+  { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
+  { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · BCNF · ejercicios integradores." },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división." },
   { n: 8, sessions: 2, topic: "SQL I: Consultas fundamentales", detail: "SELECT · filtros con WHERE · ordenamiento · alias · expresiones · funciones escalares." },
   { n: 9, sessions: 2, topic: "SQL II: Múltiples tablas y agregación", detail: "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN y CROSS JOIN · agrupación · funciones de agregación · HAVING · subconsultas simples." },
@@ -51,19 +51,19 @@ const totalSessions = chapters.reduce((sum, c) => sum + c.sessions, 0);
 
 // Parciales que se intercalan en la tabla del temario, después del capítulo indicado.
 const examsAfterChapter: Record<number, string> = {
-  6: "Parcial 1 · 20 % — 13 de octubre — fundamentos, modelo relacional y normalización",
+  6: "Parcial 1 · 20 % — 13 de octubre — fundamentos, modelo ER, esquema relacional y normalización",
   11: "Parcial 2 · 20 % — álgebra relacional y SQL completo",
 };
 
 const milestones = [
-  { chapter: 6, label: "Parcial 1 · 20 %", desc: "Se aplica el 13 de octubre. Evalúa fundamentos, modelo relacional y normalización." },
+  { chapter: 6, label: "Parcial 1 · 20 %", desc: "Se aplica el 13 de octubre. Evalúa fundamentos, modelo ER, esquema relacional y normalización." },
   { chapter: 11, label: "Parcial 2 · 20 %", desc: "Se aplica después de terminar el capítulo 11. Evalúa álgebra relacional y SQL completo: consultas, DDL, DML y DCL." },
 ];
 
 const deliverables = [
   {
     n: 1,
-    content: "Modelo entidad-relación, normalización, diccionario de datos y esquema relacional.",
+    content: "Modelo entidad-relación, esquema relacional, normalización y diccionario de datos.",
     deadline: "16 de octubre, 23:59",
     weight: "15 %",
     details: [
