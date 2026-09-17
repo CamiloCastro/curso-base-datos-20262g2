@@ -29,7 +29,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
     { label: "Diagrama 2", url: "https://drive.google.com/file/d/1GljrzGtxIAEUib92w3s74oq8jKkr9Ca8/view?usp=drive_link" },
   ] },
   { n: 3, sessions: 3, topic: "Modelo Relacional II", detail: "Entidades débiles · atributos compuestos, multivaluados y derivados · relaciones con atributos · relaciones recursivas y ternarias.", slides: "https://drive.google.com/file/d/1ltUO6dmjo13i6BktDoF6FCYr70nVjoCg/view?usp=drive_link" },
-  { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos." },
+  { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos.", slides: "https://drive.google.com/file/d/1Z2IY90agz9rDUPCqYwJvovzZ_N81tvr3/view?usp=drivesdk" },
   { n: 5, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · BCNF · ejercicios integradores." },
   { n: 6, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división." },
