@@ -7,6 +7,7 @@ const links = {
   gradesDownload: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/export?format=xlsx",
   gradesPreview: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/preview",
   delivery1Instructions: "https://drive.google.com/file/d/1Zxpkd0ZTqIiGJbOCcgtz5ctLJOsOeo_m/view?usp=sharing",
+  delivery1Upload: "https://forms.gle/5Nd9orMot3e4QWqz7",
 };
 
 // Dirección del sitio publicado en GitHub Pages.
@@ -14,7 +15,7 @@ const links = {
 const courseUrl = "https://camilocastro.github.io/curso-base-datos-20262g2/";
 
 const evaluation = [
-  { name: "Parcial 1", note: "Se aplica al terminar el capítulo 6.", weight: 20 },
+  { name: "Parcial 1", note: "13 de octubre.", weight: 20 },
   { name: "Parcial 2", note: "Se aplica al terminar el capítulo 11.", weight: 20 },
   { name: "Proyecto — Entrega 1", note: "Modelo ER, requisitos y normalización.", weight: 15 },
   { name: "Proyecto — Entrega 2", note: "Implementación SQL e índices.", weight: 15 },
@@ -50,26 +51,26 @@ const totalSessions = chapters.reduce((sum, c) => sum + c.sessions, 0);
 
 // Parciales que se intercalan en la tabla del temario, después del capítulo indicado.
 const examsAfterChapter: Record<number, string> = {
-  6: "Parcial 1 · 20 % — fundamentos, modelo relacional y normalización",
+  6: "Parcial 1 · 20 % — 13 de octubre — fundamentos, modelo relacional y normalización",
   11: "Parcial 2 · 20 % — álgebra relacional y SQL completo",
 };
 
 const milestones = [
-  { chapter: 6, label: "Parcial 1 · 20 %", desc: "Se aplica después de terminar el capítulo 6. Evalúa fundamentos, modelo relacional y normalización." },
+  { chapter: 6, label: "Parcial 1 · 20 %", desc: "Se aplica el 13 de octubre. Evalúa fundamentos, modelo relacional y normalización." },
   { chapter: 11, label: "Parcial 2 · 20 %", desc: "Se aplica después de terminar el capítulo 11. Evalúa álgebra relacional y SQL completo: consultas, DDL, DML y DCL." },
 ];
 
 const deliverables = [
   {
     n: 1,
-    content: "Requisitos, diagrama ER, modelo relacional y normalización.",
-    deadline: "Por definir",
+    content: "Modelo entidad-relación, normalización, diccionario de datos y esquema relacional.",
+    deadline: "16 de octubre, 23:59",
     weight: "15 %",
     details: [
-      "Documento de requisitos del caso asignado.",
-      "Diagrama entidad–relación completo y validado.",
-      "Esquema relacional con claves primarias y foráneas.",
-      "Análisis de dependencias funcionales y formas normales.",
+      "Diagrama entidad–relación completo, legible y consistente con el enunciado, en un archivo editable de draw.io.",
+      "Proceso de normalización hasta tercera forma normal o BCNF, con su justificación incluida en el PDF del diccionario de datos.",
+      "Diccionario de datos del esquema propuesto, en formato PDF.",
+      "Esquema relacional con tablas, claves primarias, claves foráneas y restricciones de integridad, en un archivo editable de draw.io.",
     ],
   },
   {
@@ -178,7 +179,6 @@ export default function Home() {
         <div className="section-title"><Users /><h2>Proyecto del curso</h2></div>
         <p>El proyecto se desarrolla en <strong>grupos de tres personas</strong> y permite aplicar progresivamente los temas estudiados. Cada entrega debe cumplir con los elementos listados a continuación.</p>
         <a className="button" href={links.groupForm} target="_blank" rel="noreferrer">Registrar mi grupo <ExternalLink /></a>
-        <a className="button secondary" href={links.delivery1Instructions} target="_blank" rel="noreferrer"><FileText /> Instrucciones — Entrega 1 <Download /></a>
         <h3>Entregas</h3>
         <div className="table-wrap">
           <table>
@@ -193,7 +193,15 @@ export default function Home() {
                       {d.details.map((item, i) => <li key={i}>{item}</li>)}
                     </ul>
                   </td>
-                  <td><span className="unavailable">{d.deadline}</span></td>
+                  <td>
+                    <span className={d.deadline === "Por definir" ? "unavailable" : undefined}>{d.deadline}</span>
+                    {d.n === 1 && (
+                      <div className="diagram-links">
+                        <a className="slides-link diagram-link" href={links.delivery1Instructions} target="_blank" rel="noreferrer"><FileText /> Instrucciones — Entrega 1 <Download /></a>
+                        <a className="slides-link diagram-link" href={links.delivery1Upload} target="_blank" rel="noreferrer"><ExternalLink /> Subir entrega 1</a>
+                      </div>
+                    )}
+                  </td>
                   <td className="weight"><strong>{d.weight}</strong></td>
                 </tr>
               ))}
