@@ -34,7 +34,9 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
     { label: "Diagrama 4", url: "https://drive.google.com/file/d/1uzsElmBI6cJooD1AVUmtYyUEg2CV96lZ/view?usp=drive_link" },
     { label: "Diagrama 5", url: "https://drive.google.com/file/d/1karavP8ieVcalV03NE5fb5u-KZKFek2q/view?usp=sharing" },
   ] },
-  { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos.", slides: "https://drive.google.com/file/d/1Z2IY90agz9rDUPCqYwJvovzZ_N81tvr3/view?usp=drivesdk" },
+  { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos.", slides: "https://drive.google.com/file/d/1Z2IY90agz9rDUPCqYwJvovzZ_N81tvr3/view?usp=drivesdk", diagrams: [
+    { label: "Diagrama 6", url: "https://drive.google.com/file/d/1aE4J9T_lucc8G5uIJUy3xf5oECUD41dH/view?usp=sharing" },
+  ] },
   { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial." },
   { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · BCNF · ejercicios integradores." },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división." },
