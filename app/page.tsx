@@ -70,7 +70,7 @@ const deliverables = [
     weight: "15 %",
     details: [
       "Diagrama entidad–relación completo, legible y consistente con el enunciado, en un archivo editable de draw.io.",
-      "Proceso de normalización hasta tercera forma normal o BCNF, con su justificación incluida en el PDF del diccionario de datos.",
+      "Justificación de que cada tabla del esquema está en tercera forma normal, incluida en el PDF del diccionario de datos.",
       "Diccionario de datos del esquema propuesto, en formato PDF.",
       "Esquema relacional con tablas, claves primarias, claves foráneas y restricciones de integridad, en un archivo editable de draw.io.",
     ],
