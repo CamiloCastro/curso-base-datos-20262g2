@@ -37,7 +37,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   { n: 4, sessions: 2, topic: "Modelo Relacional III", detail: "Generalización y especialización · jerarquías es-un · validación y refinamiento del diagrama ER · modelado de casos completos.", slides: "https://drive.google.com/file/d/1Z0myW9ZTvR_2pO-c6X1BhkrHPzoz6p-4/view?usp=sharing", diagrams: [
     { label: "Diagrama 6", url: "https://drive.google.com/file/d/1aE4J9T_lucc8G5uIJUy3xf5oECUD41dH/view?usp=sharing" },
   ] },
-  { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial.", slides: "https://drive.google.com/file/d/1ZRvTxqP5smlKZ5hMhK_jeHLApTvmk3Pg/view?usp=sharing" },
+  { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial.", slides: "https://drive.google.com/file/d/1q5kQFte-TJGDO087YlRvW2CZAtopXI6v/view?usp=sharing" },
   { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · ejercicios integradores.", slides: "https://drive.google.com/file/d/1RfpqLpExCLn9A_ampAEgCMduSBEc-ekz/view?usp=sharing" },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división." },
   { n: 8, sessions: 2, topic: "SQL I: Consultas fundamentales", detail: "SELECT · filtros con WHERE · ordenamiento · alias · expresiones · funciones escalares." },
