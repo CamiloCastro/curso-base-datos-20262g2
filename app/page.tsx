@@ -39,7 +39,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   ] },
   { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial.", slides: "https://drive.google.com/file/d/1q5kQFte-TJGDO087YlRvW2CZAtopXI6v/view?usp=sharing" },
   { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · ejercicios integradores.", slides: "https://drive.google.com/file/d/1RfpqLpExCLn9A_ampAEgCMduSBEc-ekz/view?usp=sharing" },
-  { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división." },
+  { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división.", slides: "https://drive.google.com/file/d/1Jb_mKjR05V4SwfImDJQerz_R3mg186wT/view?usp=sharing" },
   { n: 8, sessions: 2, topic: "SQL I: Consultas fundamentales", detail: "SELECT · filtros con WHERE · ordenamiento · alias · expresiones · funciones escalares." },
   { n: 9, sessions: 2, topic: "SQL II: Múltiples tablas y agregación", detail: "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN y CROSS JOIN · agrupación · funciones de agregación · HAVING · subconsultas simples." },
   { n: 10, sessions: 2, topic: "SQL III: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas." },
