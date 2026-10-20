@@ -536,6 +536,7 @@ td strong { color: var(--ink); }
 .exam-row:hover td { background: var(--amber-tint); }
 .exam-row td > span { display: inline-flex; align-items: center; gap: 9px; }
 .exam-row svg { width: 16px; height: 16px; }
+.exam-row .diagram-links { margin-top: 10px; }
 
 /* Tarjetas de hitos */
 .milestones {

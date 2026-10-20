@@ -23,7 +23,7 @@ const evaluation = [
   { name: "Quices y talleres de clase", note: "Actividades desarrolladas durante las sesiones.", weight: 10 },
 ];
 
-const chapters: { n: number; sessions: number; topic: string; detail: string; slides?: string; diagrams?: { label: string; url: string }[] }[] = [
+const chapters: { n: number; sessions: number; topic: string; detail: string; slides?: string; downloads?: { label: string; url: string }[]; diagrams?: { label: string; url: string }[] }[] = [
   { n: 1, sessions: 1, topic: "Introducción a las bases de datos", detail: "Conceptos básicos, importancia y evolución de las bases de datos · arquitectura cliente-servidor · integridad · roles: usuario final, DBA, programador y seguridad.", slides: "https://drive.google.com/file/d/1FRnLed6PEZHAEm-V_1KJbgNuo2FwPwvY/view?usp=sharing" },
   { n: 2, sessions: 2, topic: "Modelo Relacional I", detail: "De la realidad al modelo · requerimientos y comprensión del problema · entidades, atributos e identificadores · relaciones, cardinalidad 1:1, 1:N y N:M · opcionalidad (mínimo y máximo) · caso guiado y método de modelado.", slides: "https://drive.google.com/file/d/1E_EE6XokceAdvX2UAzobWwpa0CjANMFR/view?usp=sharing", diagrams: [
     { label: "Diagrama 1", url: "https://drive.google.com/file/d/1Z99L5Ivoxe_UbWYtHmLt7RdN39ji0B2d/view?usp=sharing" },
@@ -40,9 +40,11 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   { n: 5, sessions: 2, topic: "Del modelo ER al relacional", detail: "Transformación de entidades y relaciones a tablas · claves primarias y foráneas · integridad referencial.", slides: "https://drive.google.com/file/d/1q5kQFte-TJGDO087YlRvW2CZAtopXI6v/view?usp=sharing" },
   { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · ejercicios integradores.", slides: "https://drive.google.com/file/d/1RfpqLpExCLn9A_ampAEgCMduSBEc-ekz/view?usp=sharing" },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división.", slides: "https://drive.google.com/file/d/1Jb_mKjR05V4SwfImDJQerz_R3mg186wT/view?usp=sharing" },
-  { n: 8, sessions: 2, topic: "SQL I: Consultas fundamentales", detail: "SELECT · filtros con WHERE · ordenamiento · alias · expresiones · funciones escalares." },
-  { n: 9, sessions: 2, topic: "SQL II: Múltiples tablas y agregación", detail: "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN y CROSS JOIN · agrupación · funciones de agregación · HAVING · subconsultas simples." },
-  { n: 10, sessions: 2, topic: "SQL III: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas." },
+  { n: 8, sessions: 2, topic: "SQL I: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas.", slides: "https://drive.google.com/file/d/1xUGifJHAtfGKGHt4B42c1ylzhXHYo4vj/view?usp=sharing", downloads: [
+    { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/uc?export=download&id=1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi" },
+  ] },
+  { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING." },
+  { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "CROSS JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN y FULL JOIN · joins con agrupación · UNION, INTERSECT, EXCEPT · subconsultas simples." },
   { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas." },
   { n: 12, sessions: 2, topic: "Programación en bases de datos", detail: "Variables y estructuras de control · funciones y procedimientos almacenados · triggers · índices." },
   { n: 13, sessions: 1, topic: "Integración de aplicaciones", detail: "Conexión a bases de datos desde aplicaciones web · ODBC · JDBC · conector de Python." },
@@ -55,6 +57,14 @@ const totalSessions = chapters.reduce((sum, c) => sum + c.sessions, 0);
 const examsAfterChapter: Record<number, string> = {
   6: "Parcial 1 · 20 % — 13 de octubre — fundamentos, modelo ER, esquema relacional y normalización",
   11: "Parcial 2 · 20 % — álgebra relacional y SQL completo",
+};
+
+// Soluciones del Parcial 1 (se muestran junto al parcial en la tabla).
+const examSolutions: Record<number, { label: string; url: string }[]> = {
+  6: [
+    { label: "Solución Tema A", url: "https://drive.google.com/file/d/113g3GKrXKvdbs8YUin7-8N_U5_d_me26/view?usp=sharing" },
+    { label: "Solución Tema B", url: "https://drive.google.com/file/d/1c_3hPzgPGhZKWTFG4wn3j3cGDlpZ4g5D/view?usp=sharing" },
+  ],
 };
 
 const milestones = [
@@ -229,6 +239,13 @@ export default function Home() {
                       {c.slides
                         ? <a className="slides-link" href={c.slides} target="_blank" rel="noreferrer"><Presentation /> Ver presentación</a>
                         : <span className="unavailable">Por publicar</span>}
+                      {c.downloads && (
+                        <div className="diagram-links">
+                          {c.downloads.map((d) => (
+                            <a key={d.url} className="slides-link diagram-link" href={d.url} target="_blank" rel="noreferrer"><FileText /> {d.label} <Download /></a>
+                          ))}
+                        </div>
+                      )}
                       {c.diagrams && (
                         <div className="diagram-links">
                           {c.diagrams.map((d) => (
@@ -243,7 +260,16 @@ export default function Home() {
                 if (exam) {
                   rows.push(
                     <tr key={`exam-${c.n}`} className="exam-row">
-                      <td colSpan={4}><span><PenLine /> {exam}</span></td>
+                      <td colSpan={4}>
+                        <span><PenLine /> {exam}</span>
+                        {examSolutions[c.n] && (
+                          <div className="diagram-links">
+                            {examSolutions[c.n].map((sol) => (
+                              <a key={sol.url} className="slides-link diagram-link" href={sol.url} target="_blank" rel="noreferrer"><Presentation /> {sol.label} <ExternalLink /></a>
+                            ))}
+                          </div>
+                        )}
+                      </td>
                     </tr>,
                   );
                 }
@@ -281,6 +307,10 @@ export default function Home() {
         <ul className="resource-list">
           <li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noreferrer">Documentación oficial de MySQL <ExternalLink /></a></li>
           <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noreferrer">Documentación oficial de MongoDB <ExternalLink /></a></li>
+        </ul>
+        <h3>Para estudiar SQL</h3>
+        <ul className="resource-list">
+          <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noreferrer">W3Schools — Tutorial de SQL <ExternalLink /></a></li>
         </ul>
       </section>
 
