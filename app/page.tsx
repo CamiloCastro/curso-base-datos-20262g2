@@ -43,7 +43,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   { n: 8, sessions: 2, topic: "SQL I: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas.", slides: "https://drive.google.com/file/d/1xUGifJHAtfGKGHt4B42c1ylzhXHYo4vj/view?usp=sharing", downloads: [
     { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/uc?export=download&id=1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi" },
   ] },
-  { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING." },
+  { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING.", slides: "https://drive.google.com/file/d/14MmIgNgQ11ZsJjCnhNjleck6Y1E3uAnd/view?usp=sharing" },
   { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "CROSS JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN y FULL JOIN · joins con agrupación · UNION, INTERSECT, EXCEPT · subconsultas simples." },
   { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas." },
   { n: 12, sessions: 2, topic: "Programación en bases de datos", detail: "Variables y estructuras de control · funciones y procedimientos almacenados · triggers · índices." },
