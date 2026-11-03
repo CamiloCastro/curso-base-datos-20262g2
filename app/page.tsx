@@ -8,6 +8,9 @@ const links = {
   gradesPreview: "https://docs.google.com/spreadsheets/d/1gWF1N3QMYfWWe2AX1XuMpM5XOu1kh_mAm4qLmYVr1kk/preview",
   delivery1Instructions: "https://drive.google.com/file/d/1Zxpkd0ZTqIiGJbOCcgtz5ctLJOsOeo_m/view?usp=sharing",
   delivery1Upload: "https://forms.gle/5Nd9orMot3e4QWqz7",
+  delivery1Grades: "https://drive.google.com/drive/folders/1jaJOJrivNl8WU5U7nAD3ZI1p0JO3i-pA?usp=drive_link",
+  delivery2Instructions: "https://drive.google.com/file/d/1Gzsir7gL-SGKabXU8bj4U4Zp2J9pB6Ph/view?usp=sharing",
+  delivery2Upload: "https://forms.gle/u3RVKZtSsHh8P7Lv7",
 };
 
 // Dirección del sitio publicado en GitHub Pages.
@@ -16,9 +19,9 @@ const courseUrl = "https://camilocastro.github.io/curso-base-datos-20262g2/";
 
 const evaluation = [
   { name: "Parcial 1", note: "13 de octubre.", weight: 20 },
-  { name: "Parcial 2", note: "Se aplica al terminar el capítulo 11.", weight: 20 },
+  { name: "Parcial 2", note: "24 de noviembre.", weight: 20 },
   { name: "Proyecto — Entrega 1", note: "Modelo ER, esquema relacional y normalización.", weight: 15 },
-  { name: "Proyecto — Entrega 2", note: "Implementación SQL e índices.", weight: 15 },
+  { name: "Proyecto — Entrega 2", note: "Implementación SQL: creación, datos, modificaciones y consultas.", weight: 15 },
   { name: "Proyecto — Entrega 3 y sustentación", note: "Aplicación, documentación y presentación final.", weight: 20 },
   { name: "Quices y talleres de clase", note: "Actividades desarrolladas durante las sesiones.", weight: 10 },
 ];
@@ -44,7 +47,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
     { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/uc?export=download&id=1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi" },
   ] },
   { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING.", slides: "https://drive.google.com/file/d/14MmIgNgQ11ZsJjCnhNjleck6Y1E3uAnd/view?usp=sharing" },
-  { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "CROSS JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN y FULL JOIN · joins con agrupación · UNION, INTERSECT, EXCEPT · subconsultas simples." },
+  { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "Producto cartesiano · INNER JOIN, LEFT JOIN y RIGHT JOIN · joins en cadena y self join · joins con agrupación · subconsultas.", slides: "https://drive.google.com/file/d/1zF28Yfpf57V4otPMiAj3oHkQIUNexM5o/view?usp=sharing" },
   { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas." },
   { n: 12, sessions: 2, topic: "Programación en bases de datos", detail: "Variables y estructuras de control · funciones y procedimientos almacenados · triggers · índices." },
   { n: 13, sessions: 1, topic: "Integración de aplicaciones", detail: "Conexión a bases de datos desde aplicaciones web · ODBC · JDBC · conector de Python." },
@@ -56,7 +59,7 @@ const totalSessions = chapters.reduce((sum, c) => sum + c.sessions, 0);
 // Parciales que se intercalan en la tabla del temario, después del capítulo indicado.
 const examsAfterChapter: Record<number, string> = {
   6: "Parcial 1 · 20 % — 13 de octubre — fundamentos, modelo ER, esquema relacional y normalización",
-  11: "Parcial 2 · 20 % — álgebra relacional y SQL completo",
+  11: "Parcial 2 · 20 % — 24 de noviembre — álgebra relacional y SQL completo",
 };
 
 // Soluciones del Parcial 1 (se muestran junto al parcial en la tabla).
@@ -69,7 +72,7 @@ const examSolutions: Record<number, { label: string; url: string }[]> = {
 
 const milestones = [
   { chapter: 6, label: "Parcial 1 · 20 %", desc: "Se aplica el 13 de octubre. Evalúa fundamentos, modelo ER, esquema relacional y normalización." },
-  { chapter: 11, label: "Parcial 2 · 20 %", desc: "Se aplica después de terminar el capítulo 11. Evalúa álgebra relacional y SQL completo: consultas, DDL, DML y DCL." },
+  { chapter: 11, label: "Parcial 2 · 20 %", desc: "Se aplica el 24 de noviembre. Evalúa álgebra relacional y SQL completo: consultas, DDL, DML y DCL." },
 ];
 
 const deliverables = [
@@ -87,14 +90,17 @@ const deliverables = [
   },
   {
     n: 2,
-    content: "Base de datos implementada en MySQL, consultas SQL e índices.",
-    deadline: "Por definir",
+    content: "Implementación de la base de datos en MySQL: creación, datos, modificaciones y consultas SQL.",
+    deadline: "20 de noviembre, 23:59",
     weight: "15 %",
     details: [
-      "Script de creación de tablas, relaciones y restricciones.",
-      "Conjunto representativo de datos de prueba.",
-      "Consultas SQL que respondan a los requisitos del negocio.",
-      "Índices justificados según las consultas principales.",
+      "Esquema relacional definitivo, con las correcciones de la primera entrega, en un archivo editable de draw.io.",
+      "Diccionario de datos definitivo, en formato PDF.",
+      "01_creacion.sql: creación de la base de datos y de todas las tablas con sus claves primarias y foráneas.",
+      "02_inserciones.sql: datos coherentes con el problema, mínimo 5 filas por tabla.",
+      "03_modificaciones.sql: 6 sentencias ALTER TABLE, UPDATE o DELETE.",
+      "04_consultas.sql: 15 consultas SELECT (5 de una tabla, 5 de dos tablas y 5 de tres o más tablas).",
+      "Todo en un único archivo SegundaEntregaG#.zip, donde G# es el número del grupo.",
     ],
   },
   {
@@ -208,9 +214,16 @@ export default function Home() {
                   <td>
                     <span className={d.deadline === "Por definir" ? "unavailable" : undefined}>{d.deadline}</span>
                     {d.n === 1 && (
-                      <div className="diagram-links">
+                      <div className="diagram-links stacked">
                         <a className="slides-link diagram-link" href={links.delivery1Instructions} target="_blank" rel="noreferrer"><FileText /> Instrucciones — Entrega 1 <Download /></a>
                         <a className="slides-link diagram-link" href={links.delivery1Upload} target="_blank" rel="noreferrer"><ExternalLink /> Subir entrega 1</a>
+                        <a className="slides-link diagram-link" href={links.delivery1Grades} target="_blank" rel="noreferrer"><GraduationCap /> Notas — Entrega 1</a>
+                      </div>
+                    )}
+                    {d.n === 2 && (
+                      <div className="diagram-links stacked">
+                        <a className="slides-link diagram-link" href={links.delivery2Instructions} target="_blank" rel="noreferrer"><FileText /> Instrucciones — Entrega 2 <Download /></a>
+                        <a className="slides-link diagram-link" href={links.delivery2Upload} target="_blank" rel="noreferrer"><ExternalLink /> Subir entrega 2</a>
                       </div>
                     )}
                   </td>
@@ -224,7 +237,7 @@ export default function Home() {
 
       <section id="temario">
         <div className="section-title"><BookOpen /><h2>Temario por capítulos</h2></div>
-        <p>El curso se organiza en 14 capítulos y {totalSessions} sesiones. Al finalizar el capítulo 6 se aplica el Parcial 1, y al finalizar el capítulo 11 se aplica el Parcial 2. La última sesión del curso está destinada a la sustentación del proyecto.</p>
+        <p>El curso se organiza en 14 capítulos y {totalSessions} sesiones. Al finalizar el capítulo 6 se aplica el Parcial 1, y al finalizar el capítulo 11, el 24 de noviembre, se aplica el Parcial 2. La última sesión del curso está destinada a la sustentación del proyecto.</p>
         <div className="table-wrap syllabus">
           <table>
             <thead><tr><th>Capítulo</th><th>Sesiones</th><th>Tema y contenido</th><th>Presentación</th></tr></thead>
