@@ -44,7 +44,7 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   { n: 6, sessions: 2, topic: "Normalización", detail: "Dependencias funcionales · primera, segunda y tercera forma normal · ejercicios integradores.", slides: "https://drive.google.com/file/d/1RfpqLpExCLn9A_ampAEgCMduSBEc-ekz/view?usp=sharing" },
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división.", slides: "https://drive.google.com/file/d/1Jb_mKjR05V4SwfImDJQerz_R3mg186wT/view?usp=sharing" },
   { n: 8, sessions: 2, topic: "SQL I: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas.", slides: "https://drive.google.com/file/d/1xUGifJHAtfGKGHt4B42c1ylzhXHYo4vj/view?usp=sharing", downloads: [
-    { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/uc?export=download&id=1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi" },
+    { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/file/d/1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi/view?usp=sharing" },
   ] },
   { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING.", slides: "https://drive.google.com/file/d/14MmIgNgQ11ZsJjCnhNjleck6Y1E3uAnd/view?usp=sharing" },
   { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "Producto cartesiano · INNER JOIN, LEFT JOIN y RIGHT JOIN · joins en cadena y self join · joins con agrupación · subconsultas.", slides: "https://drive.google.com/file/d/1zF28Yfpf57V4otPMiAj3oHkQIUNexM5o/view?usp=sharing" },
