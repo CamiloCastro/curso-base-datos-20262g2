@@ -45,9 +45,17 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   { n: 7, sessions: 3, topic: "Álgebra relacional", detail: "Selección · proyección · unión · diferencia · intersección · renombre · producto cartesiano · joins · división.", slides: "https://drive.google.com/file/d/1Jb_mKjR05V4SwfImDJQerz_R3mg186wT/view?usp=sharing" },
   { n: 8, sessions: 2, topic: "SQL I: DDL y DML", detail: "CREATE, ALTER, DROP · tipos de datos · restricciones · INSERT, UPDATE, DELETE · transacciones básicas.", slides: "https://drive.google.com/file/d/1xUGifJHAtfGKGHt4B42c1ylzhXHYo4vj/view?usp=sharing", downloads: [
     { label: "Tutorial de instalación de MySQL", url: "https://drive.google.com/file/d/1Re1Cx9c2z4NKR9URYxUQ9JzldEj0wtQi/view?usp=sharing" },
+    { label: "Script 01: creación de tablas (SQL)", url: "https://drive.google.com/file/d/1mySTEiOzU4NjbxZnIih9A4WJNaLo-7Ve/view?usp=sharing" },
+    { label: "Script 02: inserción de datos (SQL)", url: "https://drive.google.com/file/d/17Bdz5oXttNlJ3iKHN1B7nDh4Le_P7EqX/view?usp=sharing" },
   ] },
-  { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING.", slides: "https://drive.google.com/file/d/14MmIgNgQ11ZsJjCnhNjleck6Y1E3uAnd/view?usp=sharing" },
-  { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "Producto cartesiano · INNER JOIN, LEFT JOIN y RIGHT JOIN · joins en cadena y self join · joins con agrupación · subconsultas.", slides: "https://drive.google.com/file/d/1zF28Yfpf57V4otPMiAj3oHkQIUNexM5o/view?usp=sharing" },
+  { n: 9, sessions: 2, topic: "SQL II: Consultas sobre una tabla", detail: "SELECT · alias · DISTINCT · filtros con WHERE · ordenamiento · funciones escalares · funciones de agregación · GROUP BY · HAVING.", slides: "https://drive.google.com/file/d/14MmIgNgQ11ZsJjCnhNjleck6Y1E3uAnd/view?usp=sharing", downloads: [
+    { label: "Script 03: ALTER y UPDATE (SQL)", url: "https://drive.google.com/file/d/1RWcm_a8foUV456qsy1PeRd-5GftWzAYB/view?usp=sharing" },
+    { label: "Solución Práctica 1 (SQL)", url: "https://drive.google.com/file/d/1-YmTT2Eo82Iq1HSJHfRzLCCa-tLeX1J6/view?usp=sharing" },
+    { label: "Solución Práctica 2 (SQL)", url: "https://drive.google.com/file/d/1kTXsFo7xkxq3ipY2QTcUqdT0GmIg0GBo/view?usp=sharing" },
+  ] },
+  { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "Producto cartesiano · INNER JOIN, LEFT JOIN y RIGHT JOIN · joins en cadena y self join · joins con agrupación · subconsultas.", slides: "https://drive.google.com/file/d/1zF28Yfpf57V4otPMiAj3oHkQIUNexM5o/view?usp=sharing", downloads: [
+    { label: "Solución Práctica 1 (SQL)", url: "https://drive.google.com/file/d/1E5bPy87o1vOLAbmlrefUjGEgPsy6TsxK/view?usp=sharing" },
+  ] },
   { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas." },
   { n: 12, sessions: 2, topic: "Programación en bases de datos", detail: "Variables y estructuras de control · funciones y procedimientos almacenados · triggers · índices." },
   { n: 13, sessions: 1, topic: "Integración de aplicaciones", detail: "Conexión a bases de datos desde aplicaciones web · ODBC · JDBC · conector de Python." },
