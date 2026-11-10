@@ -55,8 +55,10 @@ const chapters: { n: number; sessions: number; topic: string; detail: string; sl
   ] },
   { n: 10, sessions: 2, topic: "SQL III: Múltiples tablas", detail: "Producto cartesiano · INNER JOIN, LEFT JOIN y RIGHT JOIN · joins en cadena y self join · joins con agrupación · subconsultas.", slides: "https://drive.google.com/file/d/1zF28Yfpf57V4otPMiAj3oHkQIUNexM5o/view?usp=sharing", downloads: [
     { label: "Solución Práctica 1 (SQL)", url: "https://drive.google.com/file/d/1E5bPy87o1vOLAbmlrefUjGEgPsy6TsxK/view?usp=sharing" },
+    { label: "Solución Práctica 2 (SQL)", url: "https://drive.google.com/file/d/1Jbws-t_1IlpaCAruvlRJsA6rqlWjlQhp/view?usp=sharing" },
+    { label: "Ejercicio propuesto: tablas, datos y solución (ZIP)", url: "https://drive.google.com/file/d/1O18PlyY8kAI8TX6W6xJkg_cnl7pPmi6Y/view?usp=sharing" },
   ] },
-  { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas." },
+  { n: 11, sessions: 2, topic: "SQL IV: DCL y vistas", detail: "GRANT y REVOKE · control de acceso · creación y uso de vistas · seguridad a través de vistas.", slides: "https://drive.google.com/file/d/12UhLlWz6hqMHeEbkc2n56M-tmMgDe1gD/view?usp=sharing" },
   { n: 12, sessions: 2, topic: "Programación en bases de datos", detail: "Variables y estructuras de control · funciones y procedimientos almacenados · triggers · índices." },
   { n: 13, sessions: 1, topic: "Integración de aplicaciones", detail: "Conexión a bases de datos desde aplicaciones web · ODBC · JDBC · conector de Python." },
   { n: 14, sessions: 1, topic: "NoSQL y MongoDB", detail: "Modelos NoSQL · documentos y colecciones · operaciones básicas en MongoDB · comparación con el modelo relacional." },
